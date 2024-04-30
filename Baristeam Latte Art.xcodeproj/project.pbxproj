@@ -11,6 +11,13 @@
 		9A5CDD962BDE1BC1003A0447 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CDD952BDE1BC1003A0447 /* ContentView.swift */; };
 		9A5CDD982BDE1BC3003A0447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A5CDD972BDE1BC3003A0447 /* Assets.xcassets */; };
 		9A5CDD9B2BDE1BC3003A0447 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A5CDD9A2BDE1BC3003A0447 /* Preview Assets.xcassets */; };
+		9A7572602BDF638D00465BFE /* Scene.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9A75725F2BDF638D00465BFE /* Scene.usdz */; };
+		9A75726C2BE0BE9200465BFE /* ComputeShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7572652BE0BE9200465BFE /* ComputeShader.swift */; };
+		9A75726D2BE0BE9200465BFE /* MetalDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7572662BE0BE9200465BFE /* MetalDevice.swift */; };
+		9A75726E2BE0BE9200465BFE /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7572672BE0BE9200465BFE /* Renderer.swift */; };
+		9A75726F2BE0BE9200465BFE /* RenderShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7572682BE0BE9200465BFE /* RenderShader.swift */; };
+		9A7572702BE0BE9200465BFE /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9A7572692BE0BE9200465BFE /* Shaders.metal */; };
+		9A7572712BE0BE9200465BFE /* Slab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A75726A2BE0BE9200465BFE /* Slab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		9A5CDD952BDE1BC1003A0447 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9A5CDD972BDE1BC3003A0447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A5CDD9A2BDE1BC3003A0447 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9A75725F2BDF638D00465BFE /* Scene.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Scene.usdz; path = ../../../Downloads/Scene.usdz; sourceTree = "<group>"; };
+		9A7572652BE0BE9200465BFE /* ComputeShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComputeShader.swift; sourceTree = "<group>"; };
+		9A7572662BE0BE9200465BFE /* MetalDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalDevice.swift; sourceTree = "<group>"; };
+		9A7572672BE0BE9200465BFE /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		9A7572682BE0BE9200465BFE /* RenderShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderShader.swift; sourceTree = "<group>"; };
+		9A7572692BE0BE9200465BFE /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		9A75726A2BE0BE9200465BFE /* Slab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +65,10 @@
 		9A5CDD922BDE1BC1003A0447 /* Baristeam Latte Art */ = {
 			isa = PBXGroup;
 			children = (
+				9A75726B2BE0BE9200465BFE /* Shared */,
 				9A5CDD932BDE1BC1003A0447 /* AppDelegate.swift */,
 				9A5CDD952BDE1BC1003A0447 /* ContentView.swift */,
+				9A75725F2BDF638D00465BFE /* Scene.usdz */,
 				9A5CDD972BDE1BC3003A0447 /* Assets.xcassets */,
 				9A5CDD992BDE1BC3003A0447 /* Preview Content */,
 			);
@@ -65,6 +81,20 @@
 				9A5CDD9A2BDE1BC3003A0447 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9A75726B2BE0BE9200465BFE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9A7572652BE0BE9200465BFE /* ComputeShader.swift */,
+				9A7572662BE0BE9200465BFE /* MetalDevice.swift */,
+				9A7572672BE0BE9200465BFE /* Renderer.swift */,
+				9A7572682BE0BE9200465BFE /* RenderShader.swift */,
+				9A7572692BE0BE9200465BFE /* Shaders.metal */,
+				9A75726A2BE0BE9200465BFE /* Slab.swift */,
+			);
+			name = Shared;
+			path = "../../../Downloads/FluidDynamicsMetal-master/Shared";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A5CDD9B2BDE1BC3003A0447 /* Preview Assets.xcassets in Resources */,
+				9A7572602BDF638D00465BFE /* Scene.usdz in Resources */,
 				9A5CDD982BDE1BC3003A0447 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +169,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A5CDD962BDE1BC1003A0447 /* ContentView.swift in Sources */,
+				9A7572702BE0BE9200465BFE /* Shaders.metal in Sources */,
+				9A75726C2BE0BE9200465BFE /* ComputeShader.swift in Sources */,
+				9A75726F2BE0BE9200465BFE /* RenderShader.swift in Sources */,
 				9A5CDD942BDE1BC1003A0447 /* AppDelegate.swift in Sources */,
+				9A75726E2BE0BE9200465BFE /* Renderer.swift in Sources */,
+				9A75726D2BE0BE9200465BFE /* MetalDevice.swift in Sources */,
+				9A7572712BE0BE9200465BFE /* Slab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Baristeam Latte Art/Preview Content\"";
+				DEVELOPMENT_TEAM = X99LN5WXJW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -302,6 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Baristeam Latte Art/Preview Content\"";
+				DEVELOPMENT_TEAM = X99LN5WXJW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
