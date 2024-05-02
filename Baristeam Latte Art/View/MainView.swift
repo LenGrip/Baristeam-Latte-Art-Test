@@ -25,6 +25,12 @@ struct MainView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
+                Circle()
+                    .stroke(Color.red, lineWidth: 2.0)
+                    .frame(width: 10)
+            }
+            
+            VStack {
                 VStack {
                     ZStack(alignment: .leading) {
                         Capsule()
