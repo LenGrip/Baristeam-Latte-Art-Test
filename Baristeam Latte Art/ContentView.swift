@@ -36,10 +36,10 @@ struct ARViewContainer: UIViewRepresentable {
         anchor.addChild(circleEntity)
         arView.scene.anchors.append(anchor)
         
-        motion.gyroUpdateInterval = 0.1
+        motion.gyroUpdateInterval = 1 / 60.0
         motion.startGyroUpdates()
 //           Configure a timer to fetch the accelerometer data.
-        gyroTimer = Timer(fire: Date(), interval: (0.1),
+        gyroTimer = Timer(fire: Date(), interval: (1 / 60.0),
                  repeats: true, block: { (timer) in
              // Get the gyro data.
              if let data = motion.gyroData {
@@ -68,10 +68,10 @@ struct ARViewContainer: UIViewRepresentable {
 extension ARView {
     
     func addMilk() -> ModelEntity {
-        let milk = MeshResource.generatePlane(width: 0.005, depth: 0.005, cornerRadius: 100)
+        let milk = MeshResource.generatePlane(width: 0.01, depth: 0.01, cornerRadius: 100)
         let milkMaterial = SimpleMaterial(color: .white, isMetallic: false)
         let milkEntity = ModelEntity(mesh: milk, materials: [milkMaterial])
-        milkEntity.position.y = 0.0001
+        milkEntity.position.y = 0.0005
         return milkEntity
     }
     
@@ -84,6 +84,23 @@ extension ARView {
     }
     
     func handleGyro() {
+        
+//        let milk = MeshResource.generateSphere(radius: 0.002)
+        let milk = MeshResource.generatePlane(width: 0.005, depth: 0.005, cornerRadius: 100)
+        let milkMaterial = SimpleMaterial(color: .white, isMetallic: false)
+        let milkEntity = ModelEntity(mesh: milk, materials: [milkMaterial])
+//        milkEntity.generateCollisionShapes(recursive: true)
+        let clone = milkEntity.clone(recursive: true)
+        
+//        let anchorEntity = AnchorEntity(world: position)
+//        let baseAnchor = AnchorEntity(.image(group: "AR_Assets", name: "CoffeeLogo"))
+        
+        
+//        anchorEntity.addChild(milkEntity)
+//        baseAnchor.addChild(anchorEntity)
+        
+//        self.scene.addAnchor(anchorEntity)
+        
         let screenBounds = UIScreen.main.bounds
         let centerX = screenBounds.width / 2.0
         let centerY = screenBounds.height / 2.0
@@ -95,18 +112,22 @@ extension ARView {
         
         if let firstResult = results.first {
             var position = firstResult.position
-            
-//                        position.y += 0.3/2
-            placeMilk(at: position)
-        } else {
-            let results = self.raycast(from: centerPoint, allowing: .estimatedPlane, alignment: .any)
-            
-            if let firstResult = results.first {
-                let position = simd_make_float3(firstResult.worldTransform.columns.3)
-                placeMilk(at: position)
-//                placeCube(at: position)
-            }
+            let anchorEntity = AnchorEntity(world: position)
+            //                        position.y += 0.3/2
+            //            placeMilk(at: position)
+            anchorEntity.addChild(clone)
+            self.scene.addAnchor(anchorEntity)
         }
+            
+//        } else {
+//            let results = self.raycast(from: centerPoint, allowing: .estimatedPlane, alignment: .any)
+//            
+//            if let firstResult = results.first {
+//                let position = simd_make_float3(firstResult.worldTransform.columns.3)
+//                placeMilk(at: position)
+////                placeCube(at: position)
+//            }
+//        }
         
     }
     
@@ -155,6 +176,7 @@ extension ARView {
         let milk = MeshResource.generateSphere(radius: 0.002)
         let milkMaterial = SimpleMaterial(color: .white, isMetallic: false)
         let milkEntity = ModelEntity(mesh: milk, materials: [milkMaterial])
+        milkEntity.generateCollisionShapes(recursive: true)
         
         let anchorEntity = AnchorEntity(world: position)
 //        let baseAnchor = AnchorEntity(.image(group: "AR_Assets", name: "CoffeeLogo"))
