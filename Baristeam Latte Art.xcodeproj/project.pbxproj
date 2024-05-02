@@ -11,13 +11,14 @@
 		9A5CDD962BDE1BC1003A0447 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CDD952BDE1BC1003A0447 /* ContentView.swift */; };
 		9A5CDD982BDE1BC3003A0447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A5CDD972BDE1BC3003A0447 /* Assets.xcassets */; };
 		9A5CDD9B2BDE1BC3003A0447 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A5CDD9A2BDE1BC3003A0447 /* Preview Assets.xcassets */; };
-		9A7572602BDF638D00465BFE /* Scene.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9A75725F2BDF638D00465BFE /* Scene.usdz */; };
-		9A75726C2BE0BE9200465BFE /* ComputeShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7572652BE0BE9200465BFE /* ComputeShader.swift */; };
-		9A75726D2BE0BE9200465BFE /* MetalDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7572662BE0BE9200465BFE /* MetalDevice.swift */; };
-		9A75726E2BE0BE9200465BFE /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7572672BE0BE9200465BFE /* Renderer.swift */; };
-		9A75726F2BE0BE9200465BFE /* RenderShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7572682BE0BE9200465BFE /* RenderShader.swift */; };
-		9A7572702BE0BE9200465BFE /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9A7572692BE0BE9200465BFE /* Shaders.metal */; };
-		9A7572712BE0BE9200465BFE /* Slab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A75726A2BE0BE9200465BFE /* Slab.swift */; };
+		B132EE2D2BE0FF250043D491 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132EE292BE0FF250043D491 /* MainView.swift */; };
+		B132EE2E2BE0FF250043D491 /* ChoosingDrinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132EE2A2BE0FF250043D491 /* ChoosingDrinksView.swift */; };
+		B132EE2F2BE0FF250043D491 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132EE2B2BE0FF250043D491 /* CircleButton.swift */; };
+		B132EE302BE0FF250043D491 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132EE2C2BE0FF250043D491 /* SplashScreenView.swift */; };
+		B132EE382BE245600043D491 /* Pouring milk.wav in Resources */ = {isa = PBXBuildFile; fileRef = B132EE352BE245600043D491 /* Pouring milk.wav */; };
+		B132EE392BE245600043D491 /* bg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B132EE362BE245600043D491 /* bg.mp3 */; };
+		B132EE3A2BE245600043D491 /* Milk Frothing Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B132EE372BE245600043D491 /* Milk Frothing Sound.mp3 */; };
+		B132EE3C2BE25B0E0043D491 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132EE3B2BE25B0E0043D491 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,13 +27,14 @@
 		9A5CDD952BDE1BC1003A0447 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9A5CDD972BDE1BC3003A0447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A5CDD9A2BDE1BC3003A0447 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9A75725F2BDF638D00465BFE /* Scene.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Scene.usdz; path = ../../../Downloads/Scene.usdz; sourceTree = "<group>"; };
-		9A7572652BE0BE9200465BFE /* ComputeShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComputeShader.swift; sourceTree = "<group>"; };
-		9A7572662BE0BE9200465BFE /* MetalDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalDevice.swift; sourceTree = "<group>"; };
-		9A7572672BE0BE9200465BFE /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
-		9A7572682BE0BE9200465BFE /* RenderShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderShader.swift; sourceTree = "<group>"; };
-		9A7572692BE0BE9200465BFE /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		9A75726A2BE0BE9200465BFE /* Slab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slab.swift; sourceTree = "<group>"; };
+		B132EE292BE0FF250043D491 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B132EE2A2BE0FF250043D491 /* ChoosingDrinksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosingDrinksView.swift; sourceTree = "<group>"; };
+		B132EE2B2BE0FF250043D491 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		B132EE2C2BE0FF250043D491 /* SplashScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		B132EE352BE245600043D491 /* Pouring milk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pouring milk.wav"; sourceTree = "<group>"; };
+		B132EE362BE245600043D491 /* bg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bg.mp3; sourceTree = "<group>"; };
+		B132EE372BE245600043D491 /* Milk Frothing Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Milk Frothing Sound.mp3"; sourceTree = "<group>"; };
+		B132EE3B2BE25B0E0043D491 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +67,13 @@
 		9A5CDD922BDE1BC1003A0447 /* Baristeam Latte Art */ = {
 			isa = PBXGroup;
 			children = (
-				9A75726B2BE0BE9200465BFE /* Shared */,
 				9A5CDD932BDE1BC1003A0447 /* AppDelegate.swift */,
 				9A5CDD952BDE1BC1003A0447 /* ContentView.swift */,
-				9A75725F2BDF638D00465BFE /* Scene.usdz */,
+				B132EE282BE0FF080043D491 /* View */,
 				9A5CDD972BDE1BC3003A0447 /* Assets.xcassets */,
+				B132EE362BE245600043D491 /* bg.mp3 */,
+				B132EE372BE245600043D491 /* Milk Frothing Sound.mp3 */,
+				B132EE352BE245600043D491 /* Pouring milk.wav */,
 				9A5CDD992BDE1BC3003A0447 /* Preview Content */,
 			);
 			path = "Baristeam Latte Art";
@@ -83,18 +87,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		9A75726B2BE0BE9200465BFE /* Shared */ = {
+		B132EE282BE0FF080043D491 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9A7572652BE0BE9200465BFE /* ComputeShader.swift */,
-				9A7572662BE0BE9200465BFE /* MetalDevice.swift */,
-				9A7572672BE0BE9200465BFE /* Renderer.swift */,
-				9A7572682BE0BE9200465BFE /* RenderShader.swift */,
-				9A7572692BE0BE9200465BFE /* Shaders.metal */,
-				9A75726A2BE0BE9200465BFE /* Slab.swift */,
+				B132EE2A2BE0FF250043D491 /* ChoosingDrinksView.swift */,
+				B132EE2B2BE0FF250043D491 /* CircleButton.swift */,
+				B132EE292BE0FF250043D491 /* MainView.swift */,
+				B132EE2C2BE0FF250043D491 /* SplashScreenView.swift */,
+				B132EE3B2BE25B0E0043D491 /* TestView.swift */,
 			);
-			name = Shared;
-			path = "../../../Downloads/FluidDynamicsMetal-master/Shared";
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,8 +158,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A5CDD9B2BDE1BC3003A0447 /* Preview Assets.xcassets in Resources */,
-				9A7572602BDF638D00465BFE /* Scene.usdz in Resources */,
+				B132EE382BE245600043D491 /* Pouring milk.wav in Resources */,
+				B132EE392BE245600043D491 /* bg.mp3 in Resources */,
 				9A5CDD982BDE1BC3003A0447 /* Assets.xcassets in Resources */,
+				B132EE3A2BE245600043D491 /* Milk Frothing Sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,14 +172,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B132EE3C2BE25B0E0043D491 /* TestView.swift in Sources */,
+				B132EE2F2BE0FF250043D491 /* CircleButton.swift in Sources */,
 				9A5CDD962BDE1BC1003A0447 /* ContentView.swift in Sources */,
-				9A7572702BE0BE9200465BFE /* Shaders.metal in Sources */,
-				9A75726C2BE0BE9200465BFE /* ComputeShader.swift in Sources */,
-				9A75726F2BE0BE9200465BFE /* RenderShader.swift in Sources */,
+				B132EE2D2BE0FF250043D491 /* MainView.swift in Sources */,
 				9A5CDD942BDE1BC1003A0447 /* AppDelegate.swift in Sources */,
-				9A75726E2BE0BE9200465BFE /* Renderer.swift in Sources */,
-				9A75726D2BE0BE9200465BFE /* MetalDevice.swift in Sources */,
-				9A7572712BE0BE9200465BFE /* Slab.swift in Sources */,
+				B132EE2E2BE0FF250043D491 /* ChoosingDrinksView.swift in Sources */,
+				B132EE302BE0FF250043D491 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +312,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Baristeam Latte Art/Preview Content\"";
-				DEVELOPMENT_TEAM = X99LN5WXJW;
+				DEVELOPMENT_TEAM = H389J7W85Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -340,7 +343,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Baristeam Latte Art/Preview Content\"";
-				DEVELOPMENT_TEAM = X99LN5WXJW;
+				DEVELOPMENT_TEAM = H389J7W85Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
