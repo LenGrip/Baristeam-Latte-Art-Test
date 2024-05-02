@@ -21,11 +21,9 @@ struct ContentView : View {
 }
 
 struct ARViewContainer: UIViewRepresentable {
+    
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
-       
-        let motion = CMMotionManager()
-        var gyroTimer: Timer
     
         let circle = MeshResource.generatePlane(width: 0.08, depth: 0.08, cornerRadius: 100)
         let material = SimpleMaterial(color: .brown , isMetallic: false)
@@ -36,25 +34,7 @@ struct ARViewContainer: UIViewRepresentable {
         anchor.addChild(circleEntity)
         arView.scene.anchors.append(anchor)
         
-        motion.gyroUpdateInterval = 1 / 60.0
-        motion.startGyroUpdates()
-//           Configure a timer to fetch the accelerometer data.
-        gyroTimer = Timer(fire: Date(), interval: (1 / 60.0),
-                 repeats: true, block: { (timer) in
-             // Get the gyro data.
-             if let data = motion.gyroData {
-                let x = data.rotationRate.x
-                 if(x < 0) {
-                     arView.handleGyro()
-                 } else {
-//                     isPour = false
-                 }
-             }
-          })
-
-          // Add the timer to the current run loop.
-        RunLoop.current.add(gyroTimer, forMode: RunLoop.Mode.default)
-//        arView.enableTapGesture()
+        arView.enableTapGesture()
         return arView
     }
     
@@ -92,15 +72,6 @@ extension ARView {
 //        milkEntity.generateCollisionShapes(recursive: true)
         let clone = milkEntity.clone(recursive: true)
         
-//        let anchorEntity = AnchorEntity(world: position)
-//        let baseAnchor = AnchorEntity(.image(group: "AR_Assets", name: "CoffeeLogo"))
-        
-        
-//        anchorEntity.addChild(milkEntity)
-//        baseAnchor.addChild(anchorEntity)
-        
-//        self.scene.addAnchor(anchorEntity)
-        
         let screenBounds = UIScreen.main.bounds
         let centerX = screenBounds.width / 2.0
         let centerY = screenBounds.height / 2.0
@@ -111,10 +82,8 @@ extension ARView {
         let results = self.scene.raycast(origin: rayResult.origin, direction: rayResult.direction)
         
         if let firstResult = results.first {
-            var position = firstResult.position
+            let position = firstResult.position
             let anchorEntity = AnchorEntity(world: position)
-            //                        position.y += 0.3/2
-            //            placeMilk(at: position)
             anchorEntity.addChild(clone)
             self.scene.addAnchor(anchorEntity)
         }
@@ -138,26 +107,31 @@ extension ARView {
     }
     
     @objc func handleTap(recognizer: UITapGestureRecognizer) {
-        let tapLocation = recognizer.location(in:self)
+        var remainingTime = 15.0
+        let motion = CMMotionManager()
+        var gyroTimer: Timer
         
-        guard let rayResult = self.ray(through: tapLocation) else {return}
-        
-        let results = self.scene.raycast(origin: rayResult.origin, direction: rayResult.direction)
+        motion.gyroUpdateInterval = 1 / 60.0
+        motion.startGyroUpdates()
+//           Configure a timer to fetch the accelerometer data.
+        gyroTimer = Timer(fire: Date(), interval: (1 / 60.0),
+                 repeats: true, block: { (timer) in
+             // Get the gyro data.
+             if let data = motion.gyroData {
+                let x = data.rotationRate.x
+                 if(remainingTime > 0) {
+                     if(x < 0.02) {
+                         self.handleGyro()
+                         remainingTime -= 1/60.0
+                     } else {
+    //                     isPour = false
+                     }
+                 }
+             }
+          })
 
-        if let firstResult = results.first {
-            var position = firstResult.position
-            
-            placeMilk(at: position)
-        } else {
-            let results = self.raycast(from: tapLocation, allowing: .estimatedPlane, alignment: .any)
-            
-            if let firstResult = results.first {
-                let position = simd_make_float3(firstResult.worldTransform.columns.3)
-                
-                placeMilk(at: position)
-            } else {
-            }
-        }
+          // Add the timer to the current run loop.
+        RunLoop.current.add(gyroTimer, forMode: RunLoop.Mode.default)
     }
     
     func placeCube(at position: SIMD3<Float>) {
